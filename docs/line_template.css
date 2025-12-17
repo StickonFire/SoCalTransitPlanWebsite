@@ -1,0 +1,42 @@
+
+* {
+    box-sizing: border-box;
+    border: 1px solid #000000;
+}
+:root {
+    --main-site-color: red;
+    --navigation-color: red;
+    --content-color: red;
+    --decorative-line-color: red;
+    --line-size: 20px;
+}
+
+#Header {
+    background-color: var(--main-site-color);
+    height: 10vh;
+}
+#MidSection {
+    display: flex;
+    height: 90vh;
+}
+#Sidebar {
+    background-color: aquamarine;
+    width: fit-content;
+    padding-right: 10px;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+#StationList {
+    flex: 1
+}
+.Station {
+    display: flex;
+}
+.StationName {
+    font-size: var(--line-size)
+}
+.DecorativeLine {
+    width: var(--line-size);
+    clip-path: circle(var(--line-size) at center var(--line-size));
+    background-color: rgb(17, 0, 255);
+}
