@@ -1,14 +1,14 @@
 
 * {
     box-sizing: border-box;
-    border: 1px solid #000000;
 }
 :root {
     --main-site-color: red;
     --navigation-color: red;
     --content-color: red;
-    --decorative-line-color: red;
+    --decorative-line-color: rgb(17, 0, 255);
     --line-size: 20px;
+    --half-line-size: calc(var(--line-size) / 2)
 }
 
 #Header {
@@ -29,14 +29,47 @@
 #StationList {
     flex: 1
 }
-.Station {
+.Station, .StartStation, .EndStation {
     display: flex;
 }
+
+.DecorativeLine {
+    width: var(--line-size);
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: grid;
+}
+
+.Line, .Circle {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.Line {
+    box-sizing: border-box;
+    background-color: var(--decorative-line-color);
+}
+
+.StartStation .Line {
+    clip-path: polygon(0 var(--half-line-size),100% var(--half-line-size), 100% 100%,0 100%);
+}
+
+.Station .Line {
+    clip-path: polygon(0 0,100% 0, 100% 100%,0 100%);
+}
+
+.EndStation .Line {
+    clip-path: polygon(0 0,100% 0, 100% var(--half-line-size),0 var(--half-line-size));
+}
+
+.Circle {
+    clip-path: circle(var(--half-line-size) at center var(--half-line-size));
+    background-color: yellow;
+}
+
 .StationName {
     font-size: var(--line-size)
 }
-.DecorativeLine {
-    width: var(--line-size);
-    clip-path: circle(var(--line-size) at center var(--line-size));
-    background-color: rgb(17, 0, 255);
+.StationDetails {
+    flex-grow: 1;
 }
