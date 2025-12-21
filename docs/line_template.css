@@ -3,9 +3,9 @@
     box-sizing: border-box;
 }
 :root {
-    --main-site-color: red;
+    --main-site-color: rgb(255, 153, 0);
     --navigation-color: red;
-    --content-color: red;
+    --content-color: rgb(143, 238, 237);
     --decorative-line-color: rgb(17, 0, 255);
     --line-size: 20px;
     --half-line-size: calc(var(--line-size) / 2)
@@ -18,16 +18,24 @@
 #MidSection {
     display: flex;
     height: 90vh;
+
 }
 #Sidebar {
-    background-color: aquamarine;
+    background-color: var(--navigation-color);
     width: fit-content;
-    padding-right: 10px;
     border-right: 1px solid #000000;
     border-top: 1px solid #000000;
+    flex-shrink: 0;
 }
+
+#Content {
+    background-color: var(--content-color);
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
 #StationList {
-    flex: 1
+    flex: 1;
 }
 .Station, .StartStation, .EndStation {
     display: flex;
@@ -40,7 +48,7 @@
     display: grid;
 }
 
-.Line, .Circle {
+.Line, .BorderCircle, .Circle {
     grid-column: 1;
     grid-row: 1;
 }
@@ -62,9 +70,15 @@
     clip-path: polygon(0 0,100% 0, 100% var(--half-line-size),0 var(--half-line-size));
 }
 
-.Circle {
+.BorderCircle {
     clip-path: circle(var(--half-line-size) at center var(--half-line-size));
-    background-color: yellow;
+    background-color: var(--decorative-line-color);
+}
+
+.Circle {
+    --circle-border-size: 1px;
+    clip-path: circle(calc(var(--half-line-size) - (2*var(--circle-border-size))) at center var(--half-line-size));
+    background-color: rgb(255, 255, 255);
 }
 
 .StationName {
