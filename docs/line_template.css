@@ -43,6 +43,11 @@
     display: flex;
 }
 
+.StationHeader {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .DecorativeLine {
     width: var(--line-size);
     flex-grow: 0;
