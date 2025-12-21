@@ -11,13 +11,18 @@
     --half-line-size: calc(var(--line-size) / 2);
 }
 
+img {
+    width: 150px;
+    height: 150px;
+}
+
 #Header {
     background-color: var(--main-site-color);
     height: 10vh;
 }
 #MidSection {
     display: flex;
-    height: 90vh;
+    min-height: 90vh;
 
 }
 #Sidebar {
@@ -34,6 +39,10 @@
     background-color: var(--content-color);
     padding-left: 10px;
     flex-grow: 1;
+}
+
+#LineHeader {
+    display: flex;
 }
 
 #StationList {
