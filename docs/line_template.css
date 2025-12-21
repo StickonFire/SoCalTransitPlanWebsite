@@ -8,7 +8,7 @@
     --content-color: rgb(143, 238, 237);
     --decorative-line-color: rgb(17, 0, 255);
     --line-size: 20px;
-    --half-line-size: calc(var(--line-size) / 2)
+    --half-line-size: calc(var(--line-size) / 2);
 }
 
 #Header {
@@ -24,6 +24,8 @@
     background-color: var(--navigation-color);
     width: fit-content;
     border-right: 1px solid #000000;
+    padding-left: 5px;
+    padding-right: 5px;
     border-top: 1px solid #000000;
     flex-shrink: 0;
 }
